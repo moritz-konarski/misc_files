@@ -1,3 +1,4 @@
+
 " set line numbers
 set number
 
@@ -6,9 +7,6 @@ set relativenumber
 
 " enable spell checking
 set spell
-
-" Turn on syntax highlighting
-syntax on
 
 " Show file stats
 set ruler
@@ -21,7 +19,7 @@ set encoding=utf-8
 
 " Whitespace
 set wrap
-set textwidth=79
+set textwidth=89
 set formatoptions=tcqrn1
 set tabstop=4
 set shiftwidth=2
@@ -33,9 +31,6 @@ set noshiftround
 set scrolloff=3
 set backspace=indent,eol,start
 
-" Allow hidden buffers
-set hidden
-
 " Rendering
 set ttyfast
 
@@ -46,23 +41,5 @@ set laststatus=2
 set showmode
 set showcmd
 
-" Searching
-nnoremap / /\v
-vnoremap / /\v
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-set showmatch
-map <leader><space> :let @/=''<cr> " clear search
-
 " Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
-" Uncomment this to enable by default:
-set list " To enable by default
-
-" Color scheme (terminal)
-set t_Co=256
-set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
