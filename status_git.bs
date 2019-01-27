@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+BASE=~/Documents/Code/
+
+Programming=AUCA/Programming/
+NumMet=AUCA/NumericalMethods/
+Stats=AUCA/Statistics/
+Weather=Personal/WeatherPi/
+RasPi=Personal/RasPi/
+
+for repo in $Programming $NumMet $Stats $Weather $RasPi; do
+  cd $repo
+  if [[ `git status --porcelain` ]]; then
+    echo "--> Changes in $repo"
+  else
+    echo "No changes in $repo"
+  fi
+  cd $BASE
+done
+
