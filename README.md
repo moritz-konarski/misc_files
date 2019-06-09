@@ -1,2 +1,3 @@
-# dotfiles
-a repository for my dotfiles
+# misc_files
+A repository for my miscellaneous config files
+
