@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-BASE=/m/Misc/Desktop/Git
+BASE=/home/moritz/git
 
-ARDUINO=$BASE/arduino/
-AUCA=$BASE/auca/
+#ARDUINO=$BASE/arduino/
+#AUCA=$BASE/auca/
 C_PROJECTS=$BASE/c_projects/
 MISC_FILES=$BASE/misc_files/
-QMK_SOURCE=$BASE/qmk_source/
-RASPBERRY_PI=$BASE/raspberry_pi/
-WEATHER_PI=$BASE/weather_pi/
-WEATHER_PI_DEV=$BASE/weather_pi_dev/
+#QMK_SOURCE=$BASE/qmk_source/
+#RASPBERRY_PI=$BASE/raspberry_pi/
+#WEATHER_PI=$BASE/weather_pi/
+#WEATHER_PI_DEV=$BASE/weather_pi_dev/
 
 echo " "
 
-for repo in $ARDUINO $AUCA $C_PROJECTS $MISC_FILES $QMK_SOURCE $RASPBERRY_PI $WEATHER_PI $WEATHER_PI_DEV; do
+for repo in $C_PROJECTS $MISC_FILES; do
   cd $repo
   echo "$repo"
   git up  
