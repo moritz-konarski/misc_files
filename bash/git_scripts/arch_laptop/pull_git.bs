@@ -10,10 +10,11 @@ MISC_FILES=$BASE/misc_files/
 #RASPBERRY_PI=$BASE/raspberry_pi/
 #WEATHER_PI=$BASE/weather_pi/
 #WEATHER_PI_DEV=$BASE/weather_pi_dev/
+PRIMES=$BASE/primes
 
 echo " "
 
-for repo in $C_PROJECTS $MISC_FILES; do
+for repo in $C_PROJECTS $MISC_FILES $PRIMES; do
   cd $repo
   echo "$repo"
   git up  
