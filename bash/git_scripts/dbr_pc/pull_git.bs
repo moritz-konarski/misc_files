@@ -10,10 +10,11 @@ QMK_SOURCE=$BASE/qmk_source/
 RASPBERRY_PI=$BASE/raspberry_pi/
 WEATHER_PI=$BASE/weather_pi/
 WEATHER_PI_DEV=$BASE/weather_pi_dev/
+PRIMES=$BASE/primes/
 
 echo " "
 
-for repo in $ARDUINO $AUCA $C_PROJECTS $MISC_FILES $QMK_SOURCE $RASPBERRY_PI $WEATHER_PI $WEATHER_PI_DEV; do
+for repo in $ARDUINO $AUCA $C_PROJECTS $MISC_FILES $QMK_SOURCE $RASPBERRY_PI $WEATHER_PI $WEATHER_PI_DEV $PRIMES; do
   cd $repo
   echo "$repo"
   git up  
