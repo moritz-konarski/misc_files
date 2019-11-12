@@ -35,7 +35,7 @@ set wrap
 set textwidth=79
 set formatoptions=tcqrn1
 set tabstop=4
-set shiftwidth=2
+set shiftwidth=4
 set softtabstop=4
 set expandtab
 set noshiftround
@@ -58,6 +58,9 @@ set ttyfast
 
 " Status bar
 set laststatus=2
+
+" set spell checking
+set spell spelllang=en_us
 
 " Last line
 set showmode
