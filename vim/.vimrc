@@ -38,7 +38,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
+set autoindent
+set smartindent
 set noshiftround
+set cindent
 
 " Cursor motion
 set scrolloff=3
