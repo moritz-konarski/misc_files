@@ -89,27 +89,43 @@ fi
 
 # fuck to jump here
 # some more ls aliases
-alias ll='ls -alF'
 alias la='ls -la'
-alias l='ls -CF'
 alias cdl='cd ~/Documents/auca_la.git/'
 alias cdm='cd ~/Documents/auca_math.git/'
 alias cdc='cd ~/Documents/auca_cs.git/'
-alias cdp='cd ~/Documents/c_projects.git/'
-alias cda='cd ~/Documents/a_paper_a_day.git/'
+alias cdp='cd ~/Documents/programming.git/'
+alias cdt='cd ~/Documents/thesis.git/'
+alias pandoc='/usr/bin/pandoc'
 # alias functions for okular
 o() {
-    screen -dm "okular" "$1" 
+    screen -d -m evince $1
 }
-# alias functions for foxit 
-f() {
-    screen -dm "/home/moritz/opt/foxitsoftware/foxitreader/FoxitReader" "$1"
+# alias for virus scan
+vs() {
+    sudo clamscan -r --bell -i $1
 }
 # alias for quick pandoc compilation
 pc() {
     in_file=$1
     out_file="$(basename -s $in_file .md)"
-    pandoc $1 -o "_"$(basename $in_file .md)".pdf" -V papersize=a4 -V linkcolor=blue -V geometry:margin=1in -V fontsize=12pt
+    /usr/bin/pandoc $1 -o "_"$(basename $in_file .md)".pdf" \
+        -V papersize=a4             \
+        -V linkcolor=blue           \
+        -V geometry:margin=1in      \
+        -V fontsize=12pt            \
+        --pdf-engine=xelatex
+}
+pbc() {
+    in_file=$1
+    out_file="$(basename -s $in_file .md)"
+    /usr/bin/pandoc $1 -o "_"$(basename $in_file .md)".pdf" \
+        -V papersize=a4             \
+        -V linkcolor=blue           \
+        -V geometry:margin=1in      \
+        -V fontsize=12pt            \
+        --toc                       \
+        --toc-depth=4               \
+        --pdf-engine=xelatex
 }
 # alias for spell checking
 spell_check() {
@@ -125,10 +141,6 @@ spell_check() {
 word_count() {
     detex $1 | wc -w
 }
-
-export PATH=~/'clion-2019.3.2'/bin:$PATH
-export PATH=~/'idea-IU-193.5662.5.3'/bin:$PATH
-export PATH=/usr/share/texlive:$PATH
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -162,3 +174,22 @@ export PATH="$PATH:/home/moritz/.local/bin"
 export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
 export MANPATH="$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
+export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/julia-1.4.2/bin
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/moritz/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/moritz/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/moritz/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/moritz/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
