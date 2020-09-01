@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+BASE=/home/moritz/Documents
+
+PROG=/home/moritz/Documents/programming.git
+TH=/home/moritz/Documents/thesis.git
+BF=/home/moritz/Documents/brainfuck.git
+CS=/home/moritz/Documents/auca_cs.git
+LA=/home/moritz/Documents/auca_la.git
+MATH=/home/moritz/Documents/auca_math.git
+
+for repo in $PROG $TH $BF $LA $CS $MATH; do
+  cd $repo
+  if [[ `git status --porcelain` ]]; then
+    echo "--> Changes in $repo"
+  else
+    echo "No changes in $repo"
+  fi
+  echo " "
+  cd $BASE
+done

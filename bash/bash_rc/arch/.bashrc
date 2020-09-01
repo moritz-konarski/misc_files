@@ -57,9 +57,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] \$'
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w \$'
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h: \w'
 fi
 unset color_prompt force_color_prompt
 
@@ -87,25 +87,21 @@ fi
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
-# fuck to jump here
 # some more ls aliases
-alias ll='ls -alF'
 alias la='ls -la'
-alias l='ls -CF'
-alias cda='cd ~/Documents/auca/'
-alias cdc='cd ~/Documents/auca/comp_sci/'
+alias cdl='cd ~/Documents/auca_la.git/'
+alias cdm='cd ~/Documents/auca_math.git/'
+alias cdc='cd ~/Documents/auca_cs.git/'
+alias cdp='cd ~/Documents/programming.git/'
+alias cdb='cd ~/Documents/brainfuck.git/'
+
 # alias functions for okular
 o() {
-    screen -dm "okular" "$1" 
+    screen -dm "evince" "$1" 
 }
 
-# alias functions for foxit 
-f() {
-    screen -dm "/home/moritz/opt/foxitsoftware/foxitreader/FoxitReader" "$1"
-}
-
-export PATH=~/'clion-2019.3.2'/bin:$PATH
-export PATH=~/'idea-IU-193.5662.5.3'/bin:$PATH
+export PATH=~/.cargo/bin:$PATH
+#export PATH=/usr/share/texlive:$PATH
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -132,4 +128,10 @@ if ! shopt -oq posix; then
 fi
 
 
-PS1="$PS1\n >> "
+PS1="$PS1\n \$> "
+
+# Created by `userpath` on 2020-02-11 07:40:57
+export PATH="$PATH:/home/moritz/.local/bin"
+export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
+export MANPATH="$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
+export INFOPATH="$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/man"

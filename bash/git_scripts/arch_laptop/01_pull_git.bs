@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+BASE=/home/moritz/Documents
+
+BF=/home/moritz/Documents/brainfuck.git
+TH=/home/moritz/Documents/thesis.git
+PROG=/home/moritz/Documents/programming.git
+CS=/home/moritz/Documents/auca_cs.git
+LA=/home/moritz/Documents/auca_la.git
+MATH=/home/moritz/Documents/auca_math.git
+
+echo " "
+
+for repo in $BF $TH $PROG $CS $LA $MATH; do
+  cd $repo
+  echo "$repo"
+  git up  
+  cd $BASE
+  echo " "
+done
+
