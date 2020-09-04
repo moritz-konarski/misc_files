@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "" > todo.md
 cat auca_cs.git/TODO.md   >> todo.md
 cat auca_la.git/TODO.md   >> todo.md
 cat auca_math.git/TODO.md >> todo.md
