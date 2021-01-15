@@ -88,16 +88,36 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias la='ls -la'
+alias la='ls -lAh'
 alias cdl='cd ~/Documents/auca_la.git/'
 alias cdm='cd ~/Documents/auca_math.git/'
 alias cdc='cd ~/Documents/auca_cs.git/'
 alias cdp='cd ~/Documents/programming.git/'
 alias cdb='cd ~/Documents/brainfuck.git/'
+alias dotnet='$HOME/dotnet/dotnet'
+
+# alias to convert to pdf
+to_pdf() {
+    unoconv $1
+}
 
 # alias functions for okular
 o() {
     screen -dm "evince" "$1" 
+}
+# alias for spell checking
+spell_check() {
+    echo "Spell check"
+    echo ""
+    hunspell -l -t -u -i utf-8 -d en_US $1
+    echo ""
+    echo "grep check"
+    echo ""
+    grep '[^- \$](\|\.[^ [[:digit:]]]\|)[^\., \$]\|[^[:blank:]][[:blank:]][[:blank:]][^[:blank:]]\|[^[:blank:]][[:blank:]][[:blank:]][[:blank:]][^[:blank:]]' -i -n $1
+}
+# alias for latex word counting
+word_count() {
+    detex $1 | wc -w
 }
 
 export PATH=~/.cargo/bin:$PATH
@@ -135,3 +155,21 @@ export PATH="$PATH:/home/moritz/.local/bin"
 export PATH="$PATH:/usr/local/texlive/2020/bin/x86_64-linux"
 export MANPATH="$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
+export PATH="$PATH:/home/moritz/.dotnet/tools:$HOME/dotnet"
+export DOTNET_ROOT="$HOME/dotnet"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/moritz/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/moritz/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/moritz/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/moritz/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+

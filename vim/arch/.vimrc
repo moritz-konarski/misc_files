@@ -18,7 +18,7 @@ Plugin 'rust-lang/rust.vim'
 " Plugin 'majutsushi/tagbar'
 
 " pandoc integration
-Plugin 'vim-pandoc/vim-pandoc'
+" Plugin 'vim-pandoc/vim-pandoc'
 
 " pandoc syntax integration
 Plugin 'vim-pandoc/vim-pandoc-syntax'
@@ -39,16 +39,20 @@ let g:rustfmt_autosave = 1
 
 execute pathogen#infect()
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" let g:pandoc#formatting#mode = 'ha'
+" let g:pandoc#formatting#textwidth = 80
+
 nmap <F8> :TagbarToggle<CR>
+
 
 " Turn on syntax highlighting
 syntax on
@@ -141,4 +145,14 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
+" Color scheme (terminal)
+"set t_Co=256
+"set background=dark
+"let g:solarized_termcolors=256
+"let g:solarized_termtrans=1
+" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
+" in ~/.vim/colors/ and uncomment:
 colorscheme atom-dark-256
+
+let g:indentLine_setConceal = 0
+
