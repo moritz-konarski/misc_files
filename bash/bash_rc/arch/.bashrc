@@ -148,7 +148,7 @@ if ! shopt -oq posix; then
 fi
 
 
-PS1="$PS1\n \$> "
+PS1="$PS1\n\$> "
 
 # Created by `userpath` on 2020-02-11 07:40:57
 export PATH="$PATH:/home/moritz/.local/bin"
@@ -172,4 +172,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PROMPT_DIRTRIM=2
 
