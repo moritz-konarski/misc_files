@@ -95,6 +95,7 @@ alias cdc='cd ~/Documents/auca_cs.git/'
 alias cdp='cd ~/Documents/programming.git/'
 alias cdb='cd ~/Documents/brainfuck.git/'
 alias dotnet='$HOME/dotnet/dotnet'
+alias jn='jupyter notebook'
 
 # alias to convert to pdf
 to_pdf() {
