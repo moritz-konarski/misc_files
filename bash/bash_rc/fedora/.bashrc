@@ -89,16 +89,21 @@ fi
 
 # fuck to jump here
 # some more ls aliases
-alias la='ls -la'
+alias la='ls -lAh'
 alias cdl='cd ~/Documents/auca_la.git/'
 alias cdm='cd ~/Documents/auca_math.git/'
 alias cdc='cd ~/Documents/auca_cs.git/'
 alias cdp='cd ~/Documents/programming.git/'
 alias cdt='cd ~/Documents/thesis.git/'
+alias jl='sage -n jupyterlab'
 alias pandoc='/usr/bin/pandoc'
 # alias functions for okular
 o() {
-    screen -d -m evince $1
+    if test -f "$1"; then
+        screen -dm "qpdfview" "$1" "--unique" "--instance" "cli"
+    else
+        echo "$1: File does not exist!"
+    fi
 }
 # alias for virus scan
 vs() {
@@ -176,7 +181,6 @@ export MANPATH="$MANPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
 export INFOPATH="$INFOPATH:/usr/local/texlive/2020/texmf-dist/doc/man"
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:/usr/local/julia-1.4.2/bin
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -192,4 +196,6 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+export PROMPT_DIRTRIM=2
 
