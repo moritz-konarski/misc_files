@@ -145,14 +145,19 @@ set listchars=tab:▸\ ,eol:¬
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
-" Color scheme (terminal)
-"set t_Co=256
-"set background=dark
-"let g:solarized_termcolors=256
-"let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-colorscheme atom-dark-256
+
+colorscheme apprentice
+set t_Co=256
+set termguicolors
+
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+set background=dark    " Setting dark mode
+" export TERM_ITALICS=true
 
 let g:indentLine_setConceal = 0
 
+let g:pandoc#modules#disabled = ["folding"]
+let g:pandoc#formatting#mode  = 'hA'
+let g:pandoc#formatting#textwidth = 79

@@ -104,7 +104,12 @@ to_pdf() {
 
 # alias functions for okular
 o() {
-    screen -dm "evince" "$1" 
+    if test -f "$1"; then
+        screen -dm "evince" "$1" 
+    else
+        echo "$1: File does not exist!"
+    fi
+
 }
 # alias for spell checking
 spell_check() {
