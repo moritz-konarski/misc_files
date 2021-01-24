@@ -105,7 +105,7 @@ to_pdf() {
 # alias functions for okular
 o() {
     if test -f "$1"; then
-        screen -dm "evince" "$1" 
+        screen -dm "qpdfview" "$1" "--unique" "--instance" "cli"
     else
         echo "$1: File does not exist!"
     fi
