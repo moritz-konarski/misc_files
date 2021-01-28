@@ -95,6 +95,7 @@ alias cdm='cd ~/Documents/auca_math.git/'
 alias cdc='cd ~/Documents/auca_cs.git/'
 alias cdp='cd ~/Documents/programming.git/'
 alias cdt='cd ~/Documents/thesis.git/'
+alias cdw='cd /home/moritz/Desktop/WARC/sessions/notebooks'
 alias jl='sage -n jupyterlab'
 alias pandoc='/usr/bin/pandoc'
 # alias functions for okular
@@ -172,7 +173,7 @@ if ! shopt -oq posix; then
 fi
 
 
-PS1="$PS1\n \$> "
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w\[\033[00m\]\n\$> '
 
 # Created by `userpath` on 2020-02-11 07:40:57
 export PATH="$PATH:/home/moritz/.local/bin"
