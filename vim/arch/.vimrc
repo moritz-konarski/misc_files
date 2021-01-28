@@ -73,7 +73,7 @@ set number relativenumber
 set ruler
 
 " Blink cursor on error instead of beeping (grr)
-set visualbell
+" set visualbell
 
 " Encoding
 set encoding=utf-8
