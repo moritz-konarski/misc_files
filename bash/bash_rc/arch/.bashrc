@@ -88,7 +88,8 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias la='ls -lAh'
+alias ls='lsd'
+alias la='lsd -Alh --blocks permission --blocks user --blocks size --blocks date --blocks name --date +"%m-%d-%y %H:%M"'
 alias cdl='cd ~/Documents/auca_la.git/'
 alias cdm='cd ~/Documents/auca_math.git/'
 alias cdc='cd ~/Documents/auca_cs.git/'
@@ -97,12 +98,7 @@ alias cdb='cd ~/Documents/brainfuck.git/'
 alias dotnet='$HOME/dotnet/dotnet'
 alias jl='jupyter-lab'
 
-# alias to convert to pdf
-to_pdf() {
-    unoconv $1
-}
-
-# alias functions for okular
+# alias functions for 
 o() {
     if test -f "$1"; then
         screen -dm "qpdfview" "$1" "--unique" "--instance" "cli"
