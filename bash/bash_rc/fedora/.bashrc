@@ -89,7 +89,8 @@ fi
 
 # fuck to jump here
 # some more ls aliases
-alias la='ls -lAh'
+alias ls='lsd'
+alias la='lsd -Alh --blocks permission --blocks user --blocks size --blocks date --blocks name --date +"%m-%d-%y %H:%M"'
 alias cdl='cd ~/Documents/auca_la.git/'
 alias cdm='cd ~/Documents/auca_math.git/'
 alias cdc='cd ~/Documents/auca_cs.git/'
@@ -200,3 +201,4 @@ unset __conda_setup
 
 export PROMPT_DIRTRIM=2
 
+source <(kitty + complete setup bash)
